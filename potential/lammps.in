@@ -1,0 +1,7 @@
+# Define potential
+variable rmin equal 0.16
+variable rmax equal 2.22
+pair_style hybrid/overlay deepmd deepmd.potential table linear 284
+pair_coeff * * deepmd
+pair_coeff * * table ccpvdz-ccsdt.table ccpvdz-ccsdt ${rmax}
+pair_modify tabinner ${rmin}
